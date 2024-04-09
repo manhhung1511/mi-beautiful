@@ -693,7 +693,7 @@ export default function DashboardPage() {
           <TabPanel value={value} index={1} style={{ width: "85%" }}>
             <h3 style={{ marginBottom: "10px" }}>Danh mục sản phẩm {category && (
               <span>
-                > {nameCategory}
+                 {nameCategory}
               </span>
             )}</h3>
             {!category && (
