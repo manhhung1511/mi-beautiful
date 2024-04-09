@@ -360,7 +360,6 @@ export default function DashboardPage() {
               iconPosition="start"
               label="Đơn hàng"
               {...a11yProps(2)}
-              iconPosition="start"
             />
 
             <Tab
@@ -385,7 +384,6 @@ export default function DashboardPage() {
               iconPosition="start"
               label="Thống kê"
               {...a11yProps(3)}
-              iconPosition="start"
             />
             <Tab
               icon={
@@ -405,7 +403,6 @@ export default function DashboardPage() {
               iconPosition="start"
               label="Nhân viên"
               {...a11yProps(3)}
-              iconPosition="start"
             />
 
             <Tab
@@ -430,7 +427,6 @@ export default function DashboardPage() {
               iconPosition="start"
               label="Khách hàng"
               {...a11yProps(3)}
-              iconPosition="start"
             />
 
             <Tab
@@ -451,7 +447,6 @@ export default function DashboardPage() {
               iconPosition="start"
               label="Tin tức"
               {...a11yProps(4)}
-              iconPosition="start"
             />
 
             <Tab
@@ -472,7 +467,6 @@ export default function DashboardPage() {
               iconPosition="start"
               label="Cài đặt"
               {...a11yProps(5)}
-              iconPosition="start"
             />
 
             <Link to="/admin/login">

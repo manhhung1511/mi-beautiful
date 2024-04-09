@@ -158,9 +158,8 @@ export default function CategoryPage() {
         <Grid container spacing={{ sm: 2, xs: 1 }}>
           <Grid item sm={3}>
             <Button
-              sx={{ marginRight: "10px" }}
               variant="contained"
-              sx={{ display: { xs: "none", sm: "block" } }}
+              sx={{ display: { xs: "none", sm: "block" }, marginRight: "10px" }}
             >
               Bộ lọc
               <svg
