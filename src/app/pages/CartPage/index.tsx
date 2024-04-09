@@ -151,8 +151,7 @@ export default function CartPage() {
               <Grid
                 item
                 sm={4}
-                sx={{ color: "#999999", fontWeight: "600" }}
-                sx={{ display: { xs: "none" } }}
+                sx={{ color: "#999999", fontWeight: "600", display: { xs: "none" } }}
               >
                 SẢN PHẨM
               </Grid>

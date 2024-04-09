@@ -25,8 +25,9 @@ import TableRow from "@mui/material/TableRow";
 import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
+import { BarChart } from "@mui/x-charts/BarChart";
 import { LineChart } from "@mui/x-charts/LineChart";
-import { BarChart } from '@mui/x-charts/BarChart';
+
 import categories from "../../../../datas/category.json";
 import orders from "../../../../datas/order.json";
 import styles from "./DashboardPage.module.scss";
@@ -76,10 +77,45 @@ function createData(
   return { name, calories, fat, carbs, protein };
 }
 
-const uData = [40,30,60,20,30,60,40,30,10,40,30,30,40,30,60,40,30,60,40,30,60,40,30,60,40,30,60,50, 30, 30];
-const pData = [10,20,30,30,10,20,40,30,10,20,40,30,10,20,40,30,10,20,40,30,10,20,40,30,10,20,40, 50, 10, 10];
+const uData = [
+  40, 30, 60, 20, 30, 60, 40, 30, 10, 40, 30, 30, 40, 30, 60, 40, 30, 60, 40,
+  30, 60, 40, 30, 60, 40, 30, 60, 50, 30, 30,
+];
+const pData = [
+  10, 20, 30, 30, 10, 20, 40, 30, 10, 20, 40, 30, 10, 20, 40, 30, 10, 20, 40,
+  30, 10, 20, 40, 30, 10, 20, 40, 50, 10, 10,
+];
 const xLabels = [
-  '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24",
+  "25",
+  "26",
+  "27",
+  "28",
+  "29",
+  "30",
 ];
 
 export default function DashboardPage() {
@@ -107,9 +143,9 @@ export default function DashboardPage() {
     width: 1,
   });
 
-  const handleCatecory = (name:string) => {
+  const handleCatecory = (name: string) => {
     console.log(name);
-    setNameCategory(name)
+    setNameCategory(name);
     setCategory(true);
   };
 
@@ -691,17 +727,19 @@ export default function DashboardPage() {
             </Box>
           </TabPanel>
           <TabPanel value={value} index={1} style={{ width: "85%" }}>
-            <h3 style={{ marginBottom: "10px" }}>Danh mục sản phẩm {category && (
-              <span>
-                 {nameCategory}
-              </span>
-            )}</h3>
+            <h3 style={{ marginBottom: "10px" }}>
+              Danh mục sản phẩm {category && <span>{nameCategory}</span>}
+            </h3>
             {!category && (
               <Grid container spacing={2}>
                 <Grid item sm={2}>
                   <button
-                    style={{ backgroundColor: "#FFF", width: "100%", fontSize: "18px" }}
-                    onClick={() => handleCatecory('Tẩy trang')}
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "18px",
+                    }}
+                    onClick={() => handleCatecory("Tẩy trang")}
                   >
                     <h4
                       style={{
@@ -720,8 +758,12 @@ export default function DashboardPage() {
 
                 <Grid item sm={2}>
                   <button
-                    style={{ backgroundColor: "#FFF", width: "100%", fontSize: "18px" }}
-                    onClick={() => handleCatecory('Sữa rửa mặt')}
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "18px",
+                    }}
+                    onClick={() => handleCatecory("Sữa rửa mặt")}
                   >
                     <h4
                       style={{
@@ -739,8 +781,12 @@ export default function DashboardPage() {
                 </Grid>
                 <Grid item sm={2}>
                   <button
-                    style={{ backgroundColor: "#FFF", width: "100%", fontSize: "18px" }}
-                    onClick={() => handleCatecory('Toner')}
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "18px",
+                    }}
+                    onClick={() => handleCatecory("Toner")}
                   >
                     <h4
                       style={{
@@ -752,75 +798,19 @@ export default function DashboardPage() {
                         textAlign: "center",
                       }}
                     >
-                     Toner
-                    </h4>
-                  </button>
-                </Grid>
-             
-                <Grid item sm={2}>
-                  <button
-                    style={{ backgroundColor: "#FFF", width: "100%", fontSize: "18px" }}
-                    onClick={() => handleCatecory('Tẩy da chết')}
-                  >
-                    <h4
-                      style={{
-                        color: "#555",
-                        boxShadow:
-                          "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)",
-                        padding: "22px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                      }}
-                    >
-                     Tẩy da chết
-                    </h4>
-                  </button>
-                </Grid>
-                
-                <Grid item sm={2}>
-                  <button
-                    style={{ backgroundColor: "#FFF", width: "100%", fontSize: "18px" }}
-                    onClick={() => handleCatecory('Serum')}
-                  >
-                    <h4
-                      style={{
-                        color: "#555",
-                        boxShadow:
-                          "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)",
-                        padding: "22px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                      }}
-                    >
-                    Serum
-                    </h4>
-                  </button>
-                </Grid>
-               
-                <Grid item sm={2}>
-                  <button
-                    style={{ backgroundColor: "#FFF", width: "100%", fontSize: "18px" }}
-                    onClick={() => handleCatecory('Treatment')}
-                  >
-                    <h4
-                      style={{
-                        color: "#555",
-                        boxShadow:
-                          "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)",
-                        padding: "22px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                      }}
-                    >
-                    Treatment
+                      Toner
                     </h4>
                   </button>
                 </Grid>
 
                 <Grid item sm={2}>
                   <button
-                    style={{ backgroundColor: "#FFF", width: "100%", fontSize: "16px" }}
-                    onClick={() => handleCatecory(' Kem dưỡng ẩm')}
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "18px",
+                    }}
+                    onClick={() => handleCatecory("Tẩy da chết")}
                   >
                     <h4
                       style={{
@@ -832,15 +822,19 @@ export default function DashboardPage() {
                         textAlign: "center",
                       }}
                     >
-                     Kem dưỡng ẩm
+                      Tẩy da chết
                     </h4>
                   </button>
                 </Grid>
-              
+
                 <Grid item sm={2}>
                   <button
-                    style={{ backgroundColor: "#FFF", width: "100%" , fontSize: "18px"}}
-                    onClick={() => handleCatecory('Mặt nạ')}
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "18px",
+                    }}
+                    onClick={() => handleCatecory("Serum")}
                   >
                     <h4
                       style={{
@@ -852,13 +846,89 @@ export default function DashboardPage() {
                         textAlign: "center",
                       }}
                     >
-                     Mặt nạ
+                      Serum
+                    </h4>
+                  </button>
+                </Grid>
+
+                <Grid item sm={2}>
+                  <button
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "18px",
+                    }}
+                    onClick={() => handleCatecory("Treatment")}
+                  >
+                    <h4
+                      style={{
+                        color: "#555",
+                        boxShadow:
+                          "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)",
+                        padding: "22px",
+                        borderRadius: "10px",
+                        textAlign: "center",
+                      }}
+                    >
+                      Treatment
+                    </h4>
+                  </button>
+                </Grid>
+
+                <Grid item sm={2}>
+                  <button
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "16px",
+                    }}
+                    onClick={() => handleCatecory(" Kem dưỡng ẩm")}
+                  >
+                    <h4
+                      style={{
+                        color: "#555",
+                        boxShadow:
+                          "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)",
+                        padding: "22px",
+                        borderRadius: "10px",
+                        textAlign: "center",
+                      }}
+                    >
+                      Kem dưỡng ẩm
+                    </h4>
+                  </button>
+                </Grid>
+
+                <Grid item sm={2}>
+                  <button
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "18px",
+                    }}
+                    onClick={() => handleCatecory("Mặt nạ")}
+                  >
+                    <h4
+                      style={{
+                        color: "#555",
+                        boxShadow:
+                          "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)",
+                        padding: "22px",
+                        borderRadius: "10px",
+                        textAlign: "center",
+                      }}
+                    >
+                      Mặt nạ
                     </h4>
                   </button>
                 </Grid>
                 <Grid item sm={2}>
                   <button
-                    style={{ backgroundColor: "#FFF", width: "100%" , fontSize: "16px"}}
+                    style={{
+                      backgroundColor: "#FFF",
+                      width: "100%",
+                      fontSize: "16px",
+                    }}
                   >
                     <h4
                       style={{
@@ -870,8 +940,7 @@ export default function DashboardPage() {
                         textAlign: "center",
                       }}
                     >
-                     +
-                     <p>Thêm danh mục</p>
+                      +<p>Thêm danh mục</p>
                     </h4>
                   </button>
                 </Grid>
@@ -934,13 +1003,11 @@ export default function DashboardPage() {
                   <Grid item sm={2} style={{ padding: "15px" }}>
                     Giảm giá
                   </Grid>
-                  <Grid item sm={1} style={{ padding: "15px" }}>
-                  
-                  </Grid>
+                  <Grid item sm={1} style={{ padding: "15px" }}></Grid>
                 </Grid>
 
                 {categories.map(item => {
-                  if(item.status === nameCategory) {
+                  if (item.status === nameCategory) {
                     return (
                       <Grid container spacing={2}>
                         <Grid item sm={2} style={{ padding: "15px" }}>
@@ -962,171 +1029,246 @@ export default function DashboardPage() {
                           <p>{item.discount}</p>
                         </Grid>
                         <Grid item sm={1} style={{ padding: "15px" }}>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g opacity="0.6">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.69671 10.4239L7.22205 10.7779L7.57538 8.30261L13.9394 1.93861C14.5252 1.35282 15.4749 1.35282 16.0607 1.93861C16.6465 2.5244 16.6465 3.47415 16.0607 4.05994L9.69671 10.4239Z" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M13.2321 2.646L15.3534 4.76733" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M13.5 10.5V15.5C13.5 16.0523 13.0523 16.5 12.5 16.5H2.5C1.94772 16.5 1.5 16.0523 1.5 15.5V5.5C1.5 4.94772 1.94772 4.5 2.5 4.5H7.5" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    </svg>
-    <span style={{marginLeft: "10px"}}>
-    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2 15.4H4.79998C4.13723 15.4 3.59998 14.8628 3.59998 14.2V3.40002H14.4V14.2C14.4 14.8628 13.8627 15.4 13.2 15.4Z" stroke="#EF3826" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M7.19993 11.8V7" stroke="#EF3826" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M10.7999 11.8V7" stroke="#EF3826" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M1.19995 3.4H16.8" stroke="#EF3826" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8 1H7.2C6.53726 1 6 1.53726 6 2.2V3.4H12V2.2C12 1.53726 11.4627 1 10.8 1Z" stroke="#EF3826" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-
-    </span>
-
-
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g opacity="0.6">
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M9.69671 10.4239L7.22205 10.7779L7.57538 8.30261L13.9394 1.93861C14.5252 1.35282 15.4749 1.35282 16.0607 1.93861C16.6465 2.5244 16.6465 3.47415 16.0607 4.05994L9.69671 10.4239Z"
+                                stroke="black"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M13.2321 2.646L15.3534 4.76733"
+                                stroke="black"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M13.5 10.5V15.5C13.5 16.0523 13.0523 16.5 12.5 16.5H2.5C1.94772 16.5 1.5 16.0523 1.5 15.5V5.5C1.5 4.94772 1.94772 4.5 2.5 4.5H7.5"
+                                stroke="black"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </g>
+                          </svg>
+                          <span style={{ marginLeft: "10px" }}>
+                            <svg
+                              width="18"
+                              height="16"
+                              viewBox="0 0 18 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M13.2 15.4H4.79998C4.13723 15.4 3.59998 14.8628 3.59998 14.2V3.40002H14.4V14.2C14.4 14.8628 13.8627 15.4 13.2 15.4Z"
+                                stroke="#EF3826"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M7.19993 11.8V7"
+                                stroke="#EF3826"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M10.7999 11.8V7"
+                                stroke="#EF3826"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M1.19995 3.4H16.8"
+                                stroke="#EF3826"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M10.8 1H7.2C6.53726 1 6 1.53726 6 2.2V3.4H12V2.2C12 1.53726 11.4627 1 10.8 1Z"
+                                stroke="#EF3826"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
                         </Grid>
                       </Grid>
-                    )
+                    );
                   }
-})}
+                })}
               </>
             )}
           </TabPanel>
-          <TabPanel value={value} index={2} style={{width: "85%"}}>
+          <TabPanel value={value} index={2} style={{ width: "85%" }}>
             <Container maxWidth="xl">
-              <h3 style={{paddingBottom: "20px"}}>
-                Đơn hàng
-              </h3>
+              <h3 style={{ paddingBottom: "20px" }}>Đơn hàng</h3>
+              <Grid container spacing={2}>
+                <Grid item sm={2} style={{ padding: "15px" }}>
+                  ID
+                </Grid>
+                <Grid item sm={3} style={{ padding: "15px" }}>
+                  Tên
+                </Grid>
+                <Grid item sm={3} style={{ padding: "15px" }}>
+                  Địa chỉ
+                </Grid>
+                <Grid item sm={2} style={{ padding: "15px" }}>
+                  Ngày
+                </Grid>
+                <Grid item sm={2} style={{ padding: "15px" }}>
+                  Trạng thái
+                </Grid>
+              </Grid>
+              {orders.map(item => (
                 <Grid container spacing={2}>
                   <Grid item sm={2} style={{ padding: "15px" }}>
-                    ID
+                    <p>{item.id}</p>
                   </Grid>
                   <Grid item sm={3} style={{ padding: "15px" }}>
-                    Tên 
+                    <p>{item.name}</p>
                   </Grid>
                   <Grid item sm={3} style={{ padding: "15px" }}>
-                    Địa chỉ
+                    <p>{item.address}</p>
                   </Grid>
                   <Grid item sm={2} style={{ padding: "15px" }}>
-                    Ngày
+                    <p>{item.date}</p>
                   </Grid>
                   <Grid item sm={2} style={{ padding: "15px" }}>
-                    Trạng thái
+                    {item.status === "1" ? (
+                      <p
+                        style={{
+                          padding: "10px 5px",
+                          backgroundColor: "#F50779",
+                          color: "#FFF",
+                          textAlign: "center",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        Hoàn thành
+                      </p>
+                    ) : (
+                      <p
+                        style={{
+                          padding: "10px 5px",
+                          backgroundColor: "#ED0006",
+                          color: "#FFF",
+                          textAlign: "center",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        Đã huỷ
+                      </p>
+                    )}
                   </Grid>
                 </Grid>
-                      {
-                        orders.map((item) => (
-                <Grid container spacing={2}>
-                        
-                          <Grid item sm={2} style={{ padding: "15px" }}>
-                          <p>{item.id}</p>
-                        </Grid>
-                        <Grid item sm={3} style={{ padding: "15px" }}>
-                          <p>{item.name}</p>
-                         
-                        </Grid>
-                        <Grid item sm={3} style={{ padding: "15px" }}>
-                                                   <p>{item.address}</p>
-
-                        </Grid>
-                        <Grid item sm={2} style={{ padding: "15px" }}>
-                                                  <p>{item.date}</p>
-
-                        </Grid>
-                        <Grid item sm={2} style={{ padding: "15px" }}>
-                                                   {item.status === '1' ? <p style={{padding: "10px 5px", backgroundColor: "#F50779", color:"#FFF", textAlign: "center", borderRadius: "10px"}}>Hoàn thành</p> : <p style={{padding: "10px 5px", backgroundColor: "#ED0006", color:"#FFF", textAlign: "center", borderRadius: "10px"}}>Đã huỷ</p>}
-
-                        </Grid>
-                        </Grid>
-      
-                        ))
-                   
-                    
-                      }
-              </Container>
+              ))}
+            </Container>
           </TabPanel>
-          <TabPanel value={value} index={3} style={{width: "85%"}}>
+          <TabPanel value={value} index={3} style={{ width: "85%" }}>
             <Container maxWidth="xl">
-              <h3 style={{paddingBottom: "20px"}}>
-                Thống kê
+              <h3 style={{ paddingBottom: "20px" }}>Thống kê</h3>
+
+              <h3
+                style={{
+                  fontSize: "20px",
+                  textAlign: "center",
+                  paddingBottom: "20px",
+                }}
+              >
+                Doanh thu theo tháng
               </h3>
-
-            <h3 style={{ fontSize: "20px", textAlign: "center", paddingBottom: "20px"}}>
-              Doanh thu theo tháng
-            </h3>
               <LineChart
-      width={1100}
-      height={500}
-      series={[
-        { data: pData, label: 'Doanh thu' },
-        { data: uData, label: 'Chi phí' },
-      ]}
-      xAxis={[{ scaleType: 'point', data: xLabels }]}
-    />
-      <div>
-   
-      </div>         
-              </Container>
+                width={1100}
+                height={500}
+                series={[
+                  { data: pData, label: "Doanh thu" },
+                  { data: uData, label: "Chi phí" },
+                ]}
+                xAxis={[{ scaleType: "point", data: xLabels }]}
+              />
+              <div></div>
+            </Container>
           </TabPanel>
-          <TabPanel value={value} index={7} style={{width: "85%"}}>
-            <Container maxWidth="xl" style={{paddingTop: "0px"}}>
-              <h3 style={{paddingBottom: "20px"}}>
-                Cài đặt
-              </h3>       
+          <TabPanel value={value} index={7} style={{ width: "85%" }}>
+            <Container maxWidth="xl" style={{ paddingTop: "0px" }}>
+              <h3 style={{ paddingBottom: "20px" }}>Cài đặt</h3>
               <div style={{ display: "grid" }}>
-                      <img
-                        style={{ margin: "0 auto" }}
-                        src="https://i.postimg.cc/yxfx3yPB/Image-5.png"
-                        alt="img"
-                      />
-                      <Button
-                        component="label"
-                        role={undefined}
-                        variant="outlined"
-                        tabIndex={-1}
-                        style={{ width: "15%", margin: "20px  auto" }}
-                      >
-                        Chọn ảnh
-                        <VisuallyHiddenInput type="file" />
-                      </Button>
-                    </div>
+                <img
+                  style={{ margin: "0 auto" }}
+                  src="https://i.postimg.cc/yxfx3yPB/Image-5.png"
+                  alt="img"
+                />
+                <Button
+                  component="label"
+                  role={undefined}
+                  variant="outlined"
+                  tabIndex={-1}
+                  style={{ width: "15%", margin: "20px  auto" }}
+                >
+                  Chọn ảnh
+                  <VisuallyHiddenInput type="file" />
+                </Button>
+              </div>
 
-                    <Grid container spacing={2}>
-                      <Grid item sm={6}>
-                        <div className={cx("input_form")}>
-                          <label>Họ</label>
-                          <input type="text" />
-                        </div>
-                      </Grid>
-                      <Grid item sm={6}>
-                        <div className={cx("input_form")}>
-                          <label>Tên</label>
-                          <input type="text" />
-                        </div>
-                      </Grid>
-                    </Grid>
+              <Grid container spacing={2}>
+                <Grid item sm={6}>
+                  <div className={cx("input_form")}>
+                    <label>Họ</label>
+                    <input type="text" />
+                  </div>
+                </Grid>
+                <Grid item sm={6}>
+                  <div className={cx("input_form")}>
+                    <label>Tên</label>
+                    <input type="text" />
+                  </div>
+                </Grid>
+              </Grid>
               <Grid item sm={12}>
-                    <h3 style={{ fontSize: "20px" }}>Đổi mật khẩu</h3>
+                <h3 style={{ fontSize: "20px" }}>Đổi mật khẩu</h3>
 
+                <div className={cx("input_form")}>
+                  <label>Mật khẩu hiện tại</label>
+                  <input type="text" />
+                </div>
+
+                <Grid container spacing={2}>
+                  <Grid item sm={6}>
                     <div className={cx("input_form")}>
-                      <label>Mật khẩu hiện tại</label>
+                      <label>Mật khẩu mới</label>
                       <input type="text" />
                     </div>
-
-                    <Grid container spacing={2}>
-                      <Grid item sm={6}>
-                        <div className={cx("input_form")}>
-                          <label>Mật khẩu mới</label>
-                          <input type="text" />
-                        </div>
-                      </Grid>
-                      <Grid item sm={6}>
-                        <div className={cx("input_form")}>
-                          <label>Nhập lại mật khẩu</label>
-                          <input type="text" />
-                        </div>
-                      </Grid>
-                    </Grid>
-                    <Button className={cx("order_button")}>Lưu thay đổi</Button>
                   </Grid>
-              </Container>
+                  <Grid item sm={6}>
+                    <div className={cx("input_form")}>
+                      <label>Nhập lại mật khẩu</label>
+                      <input type="text" />
+                    </div>
+                  </Grid>
+                </Grid>
+                <Button className={cx("order_button")}>Lưu thay đổi</Button>
+              </Grid>
+            </Container>
           </TabPanel>
         </Box>
       </Container>
