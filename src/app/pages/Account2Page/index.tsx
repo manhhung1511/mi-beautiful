@@ -176,10 +176,7 @@ export default function Account2Page() {
         // maxWidth: "45%"
       }}
     >
-      <Container
-        maxWidth="xl"
-        sx={{ background: "#FBD5E0", padding: "5px 0" }}
-      >
+      <Container maxWidth="xl" sx={{ background: "#FBD5E0", padding: "5px 0" }}>
         <Stack spacing={2}>
           <Breadcrumbs separator="›" aria-label="breadcrumb">
             {breadcrumbs}
@@ -187,57 +184,51 @@ export default function Account2Page() {
         </Stack>
       </Container>
       <Container maxWidth="xs" sx={{ padding: "20px 5px" }}>
-      <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-              Lịch sử đặt hàng
-            </h3>
+        <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
+          Lịch sử đặt hàng
+        </h3>
 
-            <TableContainer component={Paper}>
-              <Table sx={{ minWidth: 1100 }} aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell style={{ fontSize: "22px" }}>ID</TableCell>
-                    <TableCell style={{ fontSize: "22px" }}>Ngày</TableCell>
-                    <TableCell style={{ fontSize: "22px" }}>
-                      Tổng tiền
-                    </TableCell>
-                    <TableCell style={{ fontSize: "22px" }}>
-                      Trạng Thái
-                    </TableCell>
-                    <TableCell style={{ fontSize: "22px" }}></TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {rows.map(row => (
-                    <TableRow
-                      key={row.name}
-                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                    >
-                      <TableCell
-                        style={{ fontSize: "18px" }}
-                        component="th"
-                        scope="row"
-                      >
-                        {row.name}
-                      </TableCell>
-                      <TableCell style={{ fontSize: "18px" }}>
-                        {row.calories}
-                      </TableCell>
-                      <TableCell style={{ fontSize: "18px" }}>
-                        {row.fat}
-                      </TableCell>
-                      <TableCell style={{ fontSize: "18px" }}>
-                        {row.carbs}
-                      </TableCell>
-                      <TableCell style={{ fontSize: "18px" }}>
-                        <Link to="/" style={{ color: "#FA58A6" }}>
-                          {row.protein}
-                        </Link>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 1100 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell style={{ fontSize: "22px" }}>ID</TableCell>
+                <TableCell style={{ fontSize: "22px" }}>Ngày</TableCell>
+                <TableCell style={{ fontSize: "22px" }}>Tổng tiền</TableCell>
+                <TableCell style={{ fontSize: "22px" }}>Trạng Thái</TableCell>
+                <TableCell style={{ fontSize: "22px" }}></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map(row => (
+                <TableRow
+                  key={row.name}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell
+                    style={{ fontSize: "18px" }}
+                    component="th"
+                    scope="row"
+                  >
+                    {row.name}
+                  </TableCell>
+                  <TableCell style={{ fontSize: "18px" }}>
+                    {row.calories}
+                  </TableCell>
+                  <TableCell style={{ fontSize: "18px" }}>{row.fat}</TableCell>
+                  <TableCell style={{ fontSize: "18px" }}>
+                    {row.carbs}
+                  </TableCell>
+                  <TableCell style={{ fontSize: "18px" }}>
+                    <Link to="/" style={{ color: "#FA58A6" }}>
+                      {row.protein}
+                    </Link>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Container>
     </Box>
   );

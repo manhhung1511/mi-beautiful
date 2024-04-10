@@ -265,7 +265,6 @@ export default function AccountPage() {
                   />
                 </svg>
               }
-              iconPosition="start"
               label="Cài đặt"
               {...a11yProps(2)}
               iconPosition="start"

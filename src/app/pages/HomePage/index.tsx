@@ -21,73 +21,66 @@ export const HomePage = () => {
       <div className={cx("banner_main")}>
         <Banner />
       </div>
-      <Box
-        sx={{
-          marginTop: { xs: "20px", sm: "50px" },
-        }}
-      >
-        <Typography
-          variant="h3"
+      <Box  sx={{
+        marginTop: { xs: "20px", sm: "50px" },
+      }}>
+        <Typography variant="h3" 
           style={{
             textAlign: "center",
             padding: "40px 0",
-            fontWeight: "600",
+            fontWeight: "600"
           }}
-          sx={{ fontSize: { sm: "40px", xs: "20px" } }}
+          sx={{ fontSize: { sm: "40px", xs: "20px" },}}
         >
           Sản Phẩm Bán Chạy
         </Typography>
         <Product />
       </Box>
 
-      <Box
-        sx={{
-          marginTop: { xs: "20px", sm: "50px" },
-        }}
-      >
-        <Typography
-          variant="h3"
+      <Box sx={{
+        marginTop: { xs: "20px", sm: "50px" }
+      }}>
+
+      <Typography variant="h3" 
           style={{
             textAlign: "center",
             padding: "40px 0",
-            fontWeight: "600",
+            fontWeight: "600"
           }}
-          sx={{ fontSize: { sm: "40px", xs: "20px" } }}
+          sx={{ fontSize: { sm: "40px", xs: "20px" },}}
         >
           Giảm giá
         </Typography>
         <Discount />
       </Box>
 
-      <Box
-        sx={{
-          marginTop: { xs: "20px", sm: "50px" },
-        }}
-      >
-        <Typography
-          variant="h3"
+      <Box  sx={{
+        marginTop: { xs: "20px", sm: "50px" }
+      }}>
+         <Typography variant="h3" 
           style={{
             textAlign: "center",
             padding: "40px 0",
-            fontWeight: "600",
+            fontWeight: "600"
           }}
-          sx={{ fontSize: { sm: "40px", xs: "20px" }, display: "grid" }}
+          sx={{ fontSize: { sm: "40px", xs: "20px" }, display: 'grid'}}
         >
           Đánh Giá Của Khách Hàng
-          <Typography sx={{ display: { sm: "flex", xs: "none" } }}>
-            <svg
-              style={{ margin: "0 auto" }}
-              width="537"
-              height="5"
-              viewBox="0 0 537 5"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0.15625 0.200195H536.156V4.2002H0.15625V0.200195Z"
-                fill="#FA58A6"
-              />
-            </svg>
+          <Typography sx={{ display: { sm: "grid", xs: "none" }}}>
+          <svg
+            style={{ margin: "0 auto" }}
+            width="537"
+            height="5"
+            viewBox="0 0 537 5"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.15625 0.200195H536.156V4.2002H0.15625V0.200195Z"
+              fill="#FA58A6"
+            />
+          </svg>
+
           </Typography>
         </Typography>
         <Feedback />

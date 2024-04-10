@@ -20,8 +20,8 @@ import NewsPage from "core/app/pages/NewsPage";
 import IntroducePage from "core/app/pages/IntroducePage";
 import LoginPageAdmin from "core/app/pages/admin/LoginPage";
 import DashboardPage from "core/app/pages/admin/DashboardPage";
-import Account1Page from "core/app/pages/Account1Page";
 import Account2Page from "core/app/pages/Account2Page";
+import Account1Page from "core/app/pages/Account1Page ";
 
 
 const publicRoutes: PublicRoutes[] = [
@@ -94,7 +94,7 @@ const publicRoutes: PublicRoutes[] = [
   {
     path: routeConfig.accountOrder,
     component: memo(Account2Page),
-  }
+  },
 ];
 
 export { publicRoutes };
